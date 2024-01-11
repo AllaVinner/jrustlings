@@ -32,7 +32,7 @@ impl Package {
     }
 
     fn is_international(&self) -> ??? {
-        // Something goes here...
+        // Something goes here
     }
 
     fn get_fees(&self, cents_per_gram: u32) -> ??? {

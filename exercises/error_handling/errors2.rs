@@ -10,7 +10,13 @@
 // Right now, this function isn't handling the error case at all (and isn't
 // handling the success case properly either). What we want to do is: if we call
 // the `total_cost` function on a string that is not a number, that function
-// will return a `ParseIntError`, and in that case, we want to immediately
+// // If you're running this using `rustlings watch`: The exercise file will be
+// reloaded when you change one of the lines below! Try adding a `println!`
+// line, or try changing what it outputs in your terminal. Try removing a
+// semicolon and see what happens!
+//
+// Execute `rustlings hint intro1` or use the `hint` watch subcommand for a
+//will return a `ParseIntError`, and in that case, we want to immediately
 // return that error from our function and not try to multiply and add.
 //
 // There are at least two ways to implement this that are both correct-- but one
@@ -19,14 +25,14 @@
 // Execute `rustlings hint errors2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 use std::num::ParseIntError;
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
-    let qty = item_quantity.parse::<i32>();
+    let qty = item_quantity.parse::<i32>()?;
 
     Ok(qty * cost_per_item + processing_fee)
 }
